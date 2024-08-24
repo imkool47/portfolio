@@ -25,6 +25,9 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+a{
+    text-decoration: none;
+}
 
 /* ----- SMOOTH SCROLL ----- */
 html{
@@ -46,7 +49,6 @@ html{
 ::-webkit-scrollbar-thumb:hover{
     background: #bbb;
 }
-
 
 /* ---##-- REUSABLE CSS --##--- */
 
@@ -184,6 +186,7 @@ nav{
     font-size: 50px;
     font-weight: 600;
     color: var(--text-color-second);
+    color:aliceblue;
     margin-block: 20px;
 }
 .typedText{
@@ -194,6 +197,8 @@ nav{
     font-size: 15px;
     margin-bottom: 30px;
     color: var(--text-color-second);
+    color:aliceblue;
+    /* text-align: ju; */
 }
 .featured-text-btn{
     display: flex;
@@ -220,6 +225,12 @@ nav{
     border-radius: 50%;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+    color:aliceblue;
+}
+.icon i{
+    
+    font-size: 1.4rem;
+    /* //icons size */
 }
 .icon:hover{
     color: var(--first-color);
@@ -232,6 +243,8 @@ nav{
     align-content: center;
     min-height: 80vh;
     width: 50%;
+    position: relative;
+    z-index: 10;
 }
 .image{
     margin: auto 0;
@@ -268,10 +281,25 @@ nav{
    background: var(--color-white);
    border-radius: 30px;
    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+   animation: moveUpDown 3s ease-in-out infinite;
 }
 .scroll-btn i{
     font-size: 20px;
 }
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); /* Adjust this value to increase/decrease the vertical movement */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
 
 /* ----- MAIN BOX ----- */
 .section{
@@ -295,11 +323,15 @@ nav{
 }
 .top-header h1{
     font-weight: 600;
-    color: var(--text-color-second);
+    /* color: var(--text-color-second); */
+    color:aliceblue;
     margin-bottom: 10px;
 }
 .top-header span{
     color: #999;
+}
+.skills-box h3{
+    color:aliceblue;
 }
 h3{
     font-size: 20px;
@@ -314,7 +346,7 @@ h3{
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-block: 30px 70px;
+    padding-block: 45px;
     padding-inline: 20px;
     width: 100%;
     background: var(--color-white);
@@ -337,6 +369,8 @@ h3{
 .about-btn button:hover{
     background: var(--first-color-hover);
 }
+
+
 
 /* ----- ABOUT / SKILLS BOX ----- */
 .skills-box{
@@ -468,6 +502,7 @@ h3{
     border-radius: 10px;
     padding-inline: 20px;
     outline: none;
+    color:aliceblue;
 }
 textarea{
     width: 100%;
@@ -478,6 +513,7 @@ textarea{
     padding: 15px 20px;
     outline: none;
     resize: none;
+    color:aliceblue;
 }
 .form-button>.btn{
     display: flex;
@@ -500,9 +536,9 @@ footer{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    row-gap: 30px;
+    row-gap: 10px;
     background: #F8F8F8;
-    padding-block: 40px 60px;
+    padding-block: 20px;
 }
 .top-footer p{
     font-size: 25px;
@@ -523,6 +559,9 @@ footer{
 .footer-social-icons{
     display: flex;
     gap: 30px;   
+}
+.footer-social-icons a {
+    color:#000000;
 }
 .bottom-footer{
     font-size: 14px;
@@ -642,7 +681,7 @@ footer{
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 200vh;
     pointer-events: none;
     overflow: hidden;
     z-index: 1;

@@ -3,12 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="shortcut icon" href="./img/favicon-32x32.png" type="image/x-icon">
 
     <title>Portfolio | Mukul</title>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "r8JFH3K5ImbOcua5X",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_aly7qqn', 'template_nw6bftz', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
 </head>
 <body>
    <div class="container">
@@ -65,7 +87,7 @@
             <div class="featured-text-btn">
                 <button class="btn blue-btn">Hire Me</button>
                 <a href="https://drive.google.com/file/d/1l-pT25_XaLx05_pil90Vzt9QKZvFasVi/view?usp=drive_link" download="YourCV.pdf" class="btn">
-                    Download CV <i class="uil uil-file-alt"></i>
+                    Resume <i class="uil uil-file-alt"></i>
                   </a>
             </div>
             <div class="social_icons">
@@ -88,7 +110,7 @@
                 <img src="./img/profilepic.png" alt="avatar">
             </div>
           </div>
-          <div class="scroll-icon-box">
+          <div class="scroll-icon-box" >
             <a href="#about" class="scroll-btn">
                 <i class="uil uil-mouse-alt"></i>
                 <p>Scroll Down</p>
@@ -105,13 +127,13 @@
             <div class="col">
                 <div class="about-info">
                     <h3>My introduction</h3>
-                    <p>"As an MCA graduate with a passion for Cloud Computing, DevOps, and cybersecurity, I specialize in building efficient, scalable, and secure systems. 
+                    <p>As an MCA graduate with a passion for Cloud Computing, DevOps, and cybersecurity, I specialize in building efficient, scalable, and secure systems. 
                         With hands-on experience in Terraform, Docker, Kubernetes, and AWS, I focus on automating workflows and optimizing infrastructure. 
                         I am eager to contribute my technical expertise and grow further in these fields.
                     </p>
-                    <div class="about-btn">
+                    <div class="about-btn" style="margin-top:1.7rem">
                         <a href="https://drive.google.com/file/d/1l-pT25_XaLx05_pil90Vzt9QKZvFasVi/view?usp=drive_link" download="YourCV.pdf" class="btn">
-                            Download CV <i class="uil uil-file-alt"></i>
+                            Resume <i class="uil uil-file-alt"></i>
                           </a>
                     </div>
                 </div>
@@ -195,22 +217,25 @@
                     <p><i class="uil uil-envelope"></i> Email: mukul.kumar630@gmail.com</p>
                     <p><i class="uil uil-linkedin"></i> Linkedin: www.linkedin.com/in/mukul47</p>
                     <p><i class="uil uil-github"></i> Github: https://github.com/imkool47</p>
-                    <!-- <p><i class="uil uil-phone"></i> Tel: +250 708 770 000</p> -->
+                    <p><i class="uil uil-phone"></i> Tel: +91 700 750 7812</p>
                 </div>
              </div>
              <div class="col">
-                <div class="form-control">
-                    <div class="form-inputs">
-                        <input type="text" class="input-field" placeholder="Name">
-                        <input type="text" class="input-field" placeholder="Email">
+                <form id="contact-form">
+                    <div class="form-control">
+                        <div class="form-inputs">
+                            <input type="hidden" name="contact_number" value="697483">
+                            <input type="text" name="user_name" class="input-field" placeholder="Name">
+                            <input type="text" name="user_email" class="input-field" placeholder="Email">
+                        </div>
+                        <div class="text-area">
+                            <textarea name="message" placeholder="Message"></textarea>
+                        </div>
+                        <div class="form-button">
+                            <button  type="submit" class="btn">Send <i class="uil uil-message"></i></button>
+                        </div>
                     </div>
-                    <div class="text-area">
-                        <textarea placeholder="Message"></textarea>
-                    </div>
-                    <div class="form-button">
-                        <button class="btn">Send <i class="uil uil-message"></i></button>
-                    </div>
-                </div>
+                </form>
              </div>
           </div>
        </section>
@@ -260,8 +285,8 @@
 
     </div>
     
-    <script src="assets/js/particles.js"></script>
     <div class="particles"></div>
+    <script src="assets/js/particles.js"></script>
 
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
