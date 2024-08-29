@@ -2,7 +2,7 @@
 
 Welcome to my portfolio site! 🌟
 
-Explore my work and expertise in Cloud Computing, DevOps, and Cybersecurity. This site showcases my journey, projects, and the skills I've honed along the way.
+Explore my work and expertise in Cloud Computing, DevOps, Web Development and Cybersecurity. This site showcases my journey, projects, and the skills I've honed along the way.
 
 ## Key Features:
 
