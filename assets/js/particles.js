@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
         particle.className = "particle";
         particleContainer.appendChild(particle);
 
-        // Randomize position and size
+        // Randomize position, size, and animation properties
         const x = Math.random() * window.innerWidth;
         const y = Math.random() * window.innerHeight;
         const size = Math.random() * 5 + 2; // Size of particles
@@ -22,8 +22,14 @@ document.addEventListener("DOMContentLoaded", function() {
         const animationName = `particleAnimation${Math.random().toString(36).substring(7)}`;
         const keyframes = `
             @keyframes ${animationName} {
-                0% { transform: translateY(0); opacity: ${Math.random()}; }
-                100% { transform: translateY(-${Math.random() * 200}px); opacity: 0; }
+                0% { 
+                    transform: translateY(0) scale(${Math.random() * 0.5 + 0.5}); 
+                    opacity: ${Math.random()}; 
+                }
+                100% { 
+                    transform: translateY(-${Math.random() * 200}px) scale(${Math.random() * 0.5 + 0.5}); 
+                    opacity: 0; 
+                }
             }
         `;
         const styleSheet = document.createElement("style");
@@ -39,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         particleContainer.innerHTML = '';
 
         // Generate particles based on window size
-        const numParticles = Math.floor(window.innerWidth * window.innerHeight / 10000); // Adjust density
+        const numParticles = Math.floor(window.innerWidth * window.innerHeight / 3500); // Adjust density
         for (let i = 0; i < numParticles; i++) {
             createParticle();
         }
